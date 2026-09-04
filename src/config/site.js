@@ -24,7 +24,7 @@ export const siteConfig = {
   announcement: "âœ¨ Free Delivery on Orders Above Rs. 3,000 â€” Cash on Delivery Available",
 
   contact: {
-    email: "casanest54@gmail.com",
+    email: "casanest54.pk@gmail.com",
     phone: "",
     whatsapp: "", // WhatsApp not connected yet
     address: "",
@@ -43,6 +43,7 @@ export const siteConfig = {
     registeredAddress: "",
   },
 };
+
 
 
 
