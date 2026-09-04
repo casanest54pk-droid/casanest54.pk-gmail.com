@@ -1,4 +1,4 @@
-import { Fraunces, Inter } from "next/font/google";
+﻿import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
@@ -26,7 +26,12 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata = buildMetadata({});
+export const metadata = {
+  ...buildMetadata({}),
+  verification: {
+    google: "VGhqIzvRhrF2o6dwS8N4kKes9kf0UMQltKYEi8GgxL8",
+  },
+};
 
 export default function RootLayout({ children }) {
   const orgJsonLd = {
@@ -63,3 +68,4 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
