@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-linen text-ink antialiased;
+}
+
+::selection {
+  @apply bg-sienna-100 text-sienna-700;
+}
+
+:focus-visible {
+  outline: 2px solid theme("colors.sienna.500");
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-sienna-500 px-6 py-3 text-sm font-medium text-white shadow-soft transition-all duration-200 hover:-translate-y-0.5 hover:bg-sienna-600 hover:shadow-premium active:translate-y-0 active:bg-sienna-700 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-soft;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 bg-white px-6 py-3 text-sm font-medium text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-ink/30 hover:bg-linen-200 hover:shadow-soft active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-ink/80 transition-colors duration-200 hover:bg-linen-200 hover:text-ink;
+}
+
+.section {
+  @apply py-14 sm:py-20;
+}
+
+.eyebrow {
+  @apply text-sm font-medium tracking-wide text-sienna-600;
+}
+
+/* Shared form input style (checkout, contact, newsletter) */
+.input {
+  @apply w-full rounded-xl border border-ink/[0.12] bg-white px-4 py-[0.7rem] text-sm text-ink outline-none transition-colors duration-150 placeholder:text-ink/35;
+}
+.input:focus {
+  @apply border-sienna-500 ring-4 ring-sienna-500/10;
+}
+.input-error {
+  @apply border-sienna-500/70;
+}
+
+/* Reusable elevated card treatment */
+.card-premium {
+  @apply rounded-2xl border border-ink/[0.06] bg-white shadow-card transition-shadow duration-300;
+}
+
+/* Image loading shimmer placeholder */
+.img-shimmer {
+  @apply bg-linen-200;
+  background-image: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s linear infinite;
+}
+
+/* Success checkmark badge (order confirmation) */
+.success-check-circle {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: check-draw 0.5s ease-out 0.25s forwards;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
